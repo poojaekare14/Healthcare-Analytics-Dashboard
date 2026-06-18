@@ -1,6 +1,13 @@
 import streamlit as st
 import pandas as pd
 import plotly.express as px
+import os
+import pandas as pd
+
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+file_path = os.path.join(BASE_DIR, "datasets", "healthcare_dataset.csv")
+
+df = pd.read_csv(r"C:\Users\DELL\OneDrive\Desktop\Healthcare\datasets\healthcare_dataset.csv")
 
 # ======================
 # PAGE CONFIG
@@ -31,7 +38,6 @@ h1, h2, h3 {
 # ======================
 # LOAD DATA
 # ======================
-df = pd.read_csv("datasets\\healthcare_dataset.csv")
 
 # ======================
 # TITLE
