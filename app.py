@@ -2,12 +2,14 @@ import streamlit as st
 import pandas as pd
 import plotly.express as px
 import os
-import pandas as pd
 
+# ======================
+# LOAD DATA (FIXED)
+# ======================
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 file_path = os.path.join(BASE_DIR, "datasets", "healthcare_dataset.csv")
 
-df = pd.read_csv(r"C:\Users\DELL\OneDrive\Desktop\Healthcare\datasets\healthcare_dataset.csv")
+df = pd.read_csv(file_path)
 
 # ======================
 # PAGE CONFIG
@@ -34,10 +36,6 @@ h1, h2, h3 {
 }
 </style>
 """, unsafe_allow_html=True)
-
-# ======================
-# LOAD DATA
-# ======================
 
 # ======================
 # TITLE
@@ -149,7 +147,7 @@ st.success(f"🔴 Highest Cost Condition: {most_expensive_condition}")
 st.info(f"💰 Overall Average Billing: ${round(highest_avg_bill, 2)}")
 
 # ======================
-# RECOMMENDATIONS (NEW IMPORTANT SECTION)
+# RECOMMENDATIONS
 # ======================
 st.subheader("📊 Recommendations for Healthcare Management")
 
@@ -157,22 +155,11 @@ st.markdown("""
 ### 🏥 Hospital Strategy Recommendations:
 
 - 🔹 **Focus on High-Cost Diseases**
-  - Allocate more budget to conditions with highest billing impact.
-
 - 🔹 **Preventive Healthcare Programs**
-  - Promote early diagnosis to reduce expensive treatments.
-
 - 🔹 **Age-Based Healthcare Planning**
-  - Since adult/elder patients dominate, increase geriatric care units.
-
 - 🔹 **Billing Optimization**
-  - Standardize treatment pricing for major medical conditions.
-
 - 🔹 **Resource Allocation**
-  - Improve hospital infrastructure based on patient load patterns.
-
 - 🔹 **Health Awareness Campaigns**
-  - Reduce prevalence of common diseases through awareness programs.
 """)
 
 st.divider()
