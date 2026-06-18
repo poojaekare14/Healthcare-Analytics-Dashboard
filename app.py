@@ -8,8 +8,8 @@ import os
 # ======================
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 file_path = os.path.join(BASE_DIR, "datasets", "healthcare_dataset.csv")
-
-df = pd.read_csv(file_path)
+url="https://raw.githubusercontent.com/poojaekare14/Healthcare-Analytics-Dashboard/refs/heads/main/healthcare_dataset.csv"
+df = pd.read_csv(url)
 
 # ======================
 # PAGE CONFIG
