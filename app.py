@@ -6,7 +6,7 @@ st.set_page_config(page_title="Healthcare Intelligence Dashboard", page_icon="ğŸ
 
 @st.cache_data
 def load_data():
-    df = pd.read_csv(r"datasets\healthcare_dataset.csv")
+    df = pd.read_csv(r"datasets/healthcare_dataset.csv")
     
     df = df.drop_duplicates()
 
