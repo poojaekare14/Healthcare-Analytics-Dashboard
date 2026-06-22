@@ -1,18 +1,21 @@
 import streamlit as st
 import pandas as pd
 import plotly.express as px
+import os
 
 st.set_page_config(page_title="Healthcare Intelligence Dashboard", page_icon="🏥", layout="wide")
 
 @st.cache_data
 def load_data():
-    df = pd.read_csv(r"datasets/healthcare_dataset.csv")
-    
+    url = "https://raw.githubusercontent.com/poojaekare14/Healthcare-Analytics-Dashboard/main/healthcare_dataset.csv"
+    df = pd.read_csv(url)
+
     df = df.drop_duplicates()
 
     bins = [0,18,35,50,65,100]
     labels = ["Child","Young Adult","Adult","Middle Age","Senior"]
     df["Age Group"] = pd.cut(df["Age"], bins=bins, labels=labels, include_lowest=True)
+
     return df
 
 df = load_data()
